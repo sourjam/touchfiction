@@ -1,0 +1,37 @@
+{
+  "name": "touchfiction",
+  "version": "2.0.0",
+  "description": "Modern Interactive Fiction",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register --require ./server/test/test_helper.js ./server/test/",
+    "test:watch": "npm run test -- --watch"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sourjam/touchfiction.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sourjam/touchfiction/issues"
+  },
+  "homepage": "https://github.com/sourjam/touchfiction#readme",
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-preset-es2015": "^6.16.0",
+    "chai": "^3.5.0",
+    "chai-immutable": "^1.6.0",
+    "mocha": "^3.1.2"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "immutable": "^3.8.1"
+  }
+}

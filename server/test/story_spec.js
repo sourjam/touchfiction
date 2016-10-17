@@ -1,9 +1,10 @@
 import { expect } from 'chai';
+import { Map } from 'immutable';
 import Word from '../compose/Word';
 import Sentence from '../compose/Sentence';
-import { Map } from 'immutable';
+import Paragraph from '../compose/Paragraph';
 
-describe('fiction', () => {
+describe('writing', () => {
 
   describe('a word', () => {
 
@@ -45,8 +46,7 @@ describe('fiction', () => {
       expect(word.content.get('text')).to.equal('upon')
 
     });
-
-  })
+  });
 
   describe('a sentence', () => {
 
@@ -55,11 +55,22 @@ describe('fiction', () => {
 
       expect(sentence.content.size).to.equal(4);
 
-      let oneword = new Sentence('Hello');
+      let oneword = new Sentence('There');
 
       expect(oneword.content.size).to.equal(1);
+    });
+  });
+
+  describe('a paragraph', () => {
+
+    it('can have many sentences or one sentence', () => {
+      let sentence = new Sentence('Once upon a time');
+      let nextSentence = new Sentence('There lived a Queen');
+      let paragraph = new Paragraph([sentence, nextSentence]);
+
+      expect(paragraph.content.size).to.equal(2);
+
     })
   })
-
 
 })

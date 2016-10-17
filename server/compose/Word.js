@@ -11,6 +11,7 @@ export default class Word {
     this.action = Map();
     this.prevContent = List();
     this.touch = Map();
+    // touch or a choice
   }
 
   updateText(word) {

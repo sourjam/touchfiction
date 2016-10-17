@@ -11,17 +11,14 @@ export default class Sentence {
   }
 
   addWords(string) {
-    console.log(this.content, this.prevContent)
     if (this.content.size > 0) {
       this.prevContent = this.prevContent.push(this.content);
     }
     let stringArr = string.split(' ');
-    console.log('stringArr', stringArr)
     stringArr.forEach((word) => {
       let wordObj = new Word(word);
       this.content = this.content.push(wordObj);
     })
-    console.log('done', this.content)
   }
 
   content() {

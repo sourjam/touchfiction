@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Map } from 'immutable';
+import { Map, fromJS } from 'immutable';
 import Word from '../compose/Word';
 import Sentence from '../compose/Sentence';
 import Paragraph from '../compose/Paragraph';
@@ -11,7 +11,9 @@ describe('writing', () => {
     it('has Content properties', () => {
 
       let word = new Word('Once');
-
+      let json = JSON.stringify(word)
+      let parsed = fromJS(json)
+      console.log(json, parsed)
       expect(word.content.get('color')).to.equal('black');
       expect(word.content.get('size')).to.equal('1em');
       expect(word.content.get('text')).to.equal('Once');
@@ -70,7 +72,7 @@ describe('writing', () => {
 
       expect(paragraph.content.size).to.equal(2);
 
-    })
-  })
+    });
+  });
 
-})
+});

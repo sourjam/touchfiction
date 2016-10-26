@@ -10,7 +10,9 @@ const router = require('./server/router')
 
 const server = Express();
 
-router(server)
+server.use('/assets', Express.static(path.join(__dirname, '/server/templates/assets')))
+
+router(server);
 
 const port = process.env.PORT || 3001;
 
@@ -20,4 +22,4 @@ server.listen(port, (err) => {
   } else {
     console.log('Server listening on', port);
   }
-})
+});

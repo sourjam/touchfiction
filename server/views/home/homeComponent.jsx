@@ -3,9 +3,17 @@ var isNode = typeof module !== 'undefined' && module.exports
   , ReactDOM = isNode ? require('react') : window.ReactDOM
 console.log('typeof', typeof module)
 
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      read: null
+    }
+  }
+
+  componentDidMount() {
+    console.log('home comp mounted')
   }
 
   handleClick() {
@@ -13,7 +21,7 @@ class Home extends React.Component {
   }
 
   render() {
-    return <div onClick={this.handleClick}> Home </div>
+    return <a href='/read/1'> Go to Read </a>
   }
 }
 

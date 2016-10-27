@@ -10,7 +10,7 @@ const router = require('./server/router')
 
 const server = Express();
 
-server.use('/assets', Express.static(path.join(__dirname, '/server/templates/assets')))
+server.use('/', Express.static(path.join(__dirname, '/server/views')))
 
 router(server);
 

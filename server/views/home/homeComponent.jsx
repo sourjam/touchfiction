@@ -3,23 +3,22 @@ var isNode = typeof module !== 'undefined' && module.exports
   , ReactDOM = isNode ? require('react') : window.ReactDOM
 console.log('typeof', typeof module)
 
-class Hello extends React.Component {
-  constructor(props){
+class Home extends React.Component {
+  constructor(props) {
     super(props);
   }
 
   handleClick() {
-    console.log('you clicked')
+    console.log('home click');
   }
 
   render() {
-    return <div onClick={this.handleClick}> Hello {this.props.name}</div>
+    return <div onClick={this.handleClick}> Home </div>
   }
 }
 
 if (isNode) {
-  // exports.HelloMessage = HelloMessage
-  exports.HelloMessage = Hello
+  module.exports = Home;
 } else {
-  ReactDOM.render(<Hello name="John" />, document.getElementById('root'))
+  ReactDOM.render(<Home/>, document.getElementById('root'))
 }

@@ -14,12 +14,7 @@ class Read extends React.Component {
 
   componentWillMount() {
     if (!isNode) {
-      // let url = window.location.pathname + '/data';
-      // console.log('read comp mounted', url);
-      // fetch(url).then((res)=>res.json()).then((data)=>{
-      //   console.log(data)
-      //   this.setState({data: data.data});
-      // });
+      console.log(this.props)
     }
 
   }
@@ -36,6 +31,9 @@ class Read extends React.Component {
 if (isNode) {
   module.exports = Read;
 } else {
-  console.log('what', window.localStorage)
-  ReactDOM.render(<Read data={localStorage.getItem('data')}/>, document.getElementById('read'))
+  let json = localStorage.getItem('json');
+  let data = JSON.parse(json);
+  let text = data[0].text;
+  localStorage.json = null;
+  ReactDOM.render(<Read data={text}/>, document.getElementById('read'))
 }

@@ -11,7 +11,7 @@ const read = (req, res) => {
   let initRead = React.createFactory(readComponent);
   let appString = renderToString(initRead({data: testString}))
   console.log(appString)
-  res.status(200).send(readTemplate({body: appString, title: 'Read', data: testString}))
+  res.status(200).send(readTemplate({body: appString, title: 'Read', json: testObj}))
 }
 
 const data = (req, res) => {

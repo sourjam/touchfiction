@@ -1,4 +1,4 @@
-export default ({ body, title, data }) => {
+export default ({ body, title, json }) => {
   return `
     <!DOCTYPE html>
     <html>
@@ -8,7 +8,6 @@ export default ({ body, title, data }) => {
       </head>
 
       <body>
-        ${data}
         <div id="read">${body}</div>
       </body>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
@@ -16,7 +15,7 @@ export default ({ body, title, data }) => {
       <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
       <script src="/read/readComponent.jsx" type="text/babel"></script>
       <script>
-        localStorage.setItem('data', '${data}')
+        localStorage.setItem('json', '${json}')
       </script>
     </html>
   `;

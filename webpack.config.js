@@ -1,9 +1,9 @@
 var webpack = require('webpack');
+var webpackUglifyJsPlugin = require('webpack-uglify-js-plugin');
 var path = require('path');
 
 module.exports = {
   entry: [
-    'webpack/hot/only-dev-server',
     './server/views/base/baseComponent.jsx'
   ],
   output: {
@@ -29,6 +29,9 @@ module.exports = {
     contentBase: './client/src'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpackUglifyJsPlugin({
+      cacheFolder: path.resolve(__dirname, 'client/cached_uglify'),
+      minimize: true
+    })
   ]
 };

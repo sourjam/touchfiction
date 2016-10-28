@@ -4,10 +4,10 @@ var path = require('path');
 module.exports = {
   entry: [
     'webpack/hot/only-dev-server',
-    './server/hello.jsx'
+    './server/views/base/baseComponent.jsx'
   ],
   output: {
-    path: path.join(__dirname, '/server/templates/assets'),
+    path: path.join(__dirname, '/server/views/'),
     publicPath: '/',
     filename: 'bundle.js'
   },
